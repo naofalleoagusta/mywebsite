@@ -24,7 +24,6 @@ const Box = {
         cursor: "pointer",
       },
       transition: "0.5s",
-      borderRadius: "5px",
     },
     section: {
       bg: "transparent",
