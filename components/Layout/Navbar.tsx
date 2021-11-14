@@ -1,19 +1,30 @@
 import React from "react";
-import { Flex, Spacer, Container, Box } from "@chakra-ui/layout";
+import { Flex, Spacer, Container, HStack, Box } from "@chakra-ui/layout";
+import { Icon } from "@chakra-ui/icon";
+import { Link as ExternalLink } from "@chakra-ui/layout";
+import { Div, Text } from "../../atoms";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import { useStyleConfig } from "@chakra-ui/system";
 
 const Navbar: React.FC<{}> = () => {
+  const logoStyles = useStyleConfig("Box", { variant: "logo" });
   return (
     <Container maxW="container.xl">
-      <Flex align="center">
-        <Box px={4} py={2} color="white" bg="black">NLA</Box>
+      <Flex align="center" py={4}>
+        <Link href="/">
+          <Div __css={logoStyles}>
+            <Text fontSize="lg" fontWeight={700} fontStyle="italic">
+              NLA
+            </Text>
+          </Div>
+        </Link>
         <Spacer />
-        <div>
-          <span>test</span>
-          <span>test</span>
-          <span>test</span>
-        </div>
-        <Spacer />
-        <div>test</div>
+        <HStack>
+          <ExternalLink href="https://github.com/naofalleoagusta" isExternal>
+            <Icon boxSize={10} as={FaGithub} />
+          </ExternalLink>
+        </HStack>
       </Flex>
     </Container>
   );
