@@ -7,6 +7,7 @@ import { Div, Text } from "../../atoms";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useStyleConfig } from "@chakra-ui/system";
+import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
 const Navbar: React.FC<{}> = () => {
   const logoStyles = useStyleConfig("Box", { variant: "logo" });
@@ -22,6 +23,7 @@ const Navbar: React.FC<{}> = () => {
         </Link>
         <Spacer />
         <HStack align="center">
+          <ColorModeSwitcher />
           <Tooltip label="Github">
             <ExternalLink href="https://github.com/naofalleoagusta" isExternal>
               <Icon w={9} h={9} as={FaGithub} />

@@ -38,8 +38,8 @@ const Box = {
       justify: "center",
       align: "center",
       w: "100%",
-      h: "91vh",
-      minH:"91vh"
+      h: "87vh",
+      minH:"87vh"
     },
     container: {
       d: "flex",
