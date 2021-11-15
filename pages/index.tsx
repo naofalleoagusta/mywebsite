@@ -9,11 +9,14 @@ const Home: React.FC<{}> = () => {
   return (
     <Layout>
       <Grid templateColumns="repeat(12, 1fr)" gap={2} alignItems="center">
-        <GridItem colSpan={{ base: 12, md: 8, lg: 9 }}>
+        <GridItem
+          colSpan={{ base: 12, md: 8, lg: 9 }}
+          textAlign={{ base: "center", md: "left" }}
+        >
           <Fade top>
             <Div>
-              <HStack>
-                <Text fontSize="5xl" fontWeight="600">
+              <HStack justifyContent={{base:"center",md:"unset"}}>
+                <Text fontSize="5xl" fontWeight="600" as="span">
                   Hello
                 </Text>
                 <Img
