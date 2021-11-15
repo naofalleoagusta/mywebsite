@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import "@fontsource/raleway/400.css";
 import "@fontsource/open-sans/500.css";
 import theme from "../theme";
+import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

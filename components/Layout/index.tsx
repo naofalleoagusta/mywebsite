@@ -10,7 +10,11 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Container maxW="container.lg">{children}</Container>
+      <Container
+        maxW="container.lg"
+      >
+        {children}
+      </Container>
     </>
   );
 };

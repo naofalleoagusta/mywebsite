@@ -26,8 +26,30 @@ const Box = {
       transition: "0.5s",
     },
     section: {
-      bg: "transparent",
-      color: "black",
+      d: "flex",
+      justify: "center",
+      align: "center",
+      w: "100%",
+      h: "100vh",
+      minH:"100vh"
+    },
+    sectionOne: {
+      d: "flex",
+      justify: "center",
+      align: "center",
+      w: "100%",
+      h: "91vh",
+      minH:"91vh"
+    },
+    container: {
+      d: "flex",
+      flexDir: "column",
+      position: "absolute",
+      overflow: "auto",
+      top: 0,
+      left: 0,
+      w: "100%",
+      h: "100%",
     },
   },
   // The default size and variant values

@@ -11,7 +11,7 @@ import { useStyleConfig } from "@chakra-ui/system";
 const Navbar: React.FC<{}> = () => {
   const logoStyles = useStyleConfig("Box", { variant: "logo" });
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" position="sticky">
       <Flex align="center" py={4}>
         <Link href="/">
           <Div __css={logoStyles}>
