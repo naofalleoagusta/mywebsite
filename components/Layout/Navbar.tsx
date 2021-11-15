@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Spacer, Container, HStack } from "@chakra-ui/layout";
+import { Tooltip } from "@chakra-ui/tooltip";
 import { Icon } from "@chakra-ui/icon";
 import { Link as ExternalLink } from "@chakra-ui/layout";
 import { Div, Text } from "../../atoms";
@@ -21,15 +22,19 @@ const Navbar: React.FC<{}> = () => {
         </Link>
         <Spacer />
         <HStack align="center">
-          <ExternalLink href="https://github.com/naofalleoagusta" isExternal>
-            <Icon w={9} h={9} as={FaGithub} />
-          </ExternalLink>
-          <ExternalLink
-            href="https://www.linkedin.com/in/naofal-leo-agusta/"
-            isExternal
-          >
-            <Icon w={9} h={9} as={FaLinkedin} />
-          </ExternalLink>
+          <Tooltip label="Github">
+            <ExternalLink href="https://github.com/naofalleoagusta" isExternal>
+              <Icon w={9} h={9} as={FaGithub} />
+            </ExternalLink>
+          </Tooltip>
+          <Tooltip label="Linkedin">
+            <ExternalLink
+              href="https://www.linkedin.com/in/naofal-leo-agusta/"
+              isExternal
+            >
+              <Icon w={9} h={9} as={FaLinkedin} color="#0077B5" />
+            </ExternalLink>
+          </Tooltip>
         </HStack>
       </Flex>
     </Container>

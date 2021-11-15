@@ -1,6 +1,11 @@
 const Box = {
   // The styles all button have in common
   // Two sizes: sm and md
+  baseStyle: {
+    color: "black",
+    fontWeight: "normal",
+
+  },
   sizes: {
     md: {
       fontSize: "sm",
@@ -17,7 +22,7 @@ const Box = {
   variants: {
     logo: {
       color: "white",
-      bg: "linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)",
+      bg: "black",
       _hover: {
         background: "white",
         color: "black",

@@ -1,3 +1,4 @@
 import Box from "./Box";
+import Text from "./Text";
 
-export { Box };
+export { Box, Text };
