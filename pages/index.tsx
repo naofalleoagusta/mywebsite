@@ -6,6 +6,8 @@ import { HStack, Grid, GridItem, Box, VStack } from "@chakra-ui/layout";
 import { Tooltip } from "@chakra-ui/tooltip";
 import React from "react";
 import { useStyleConfig } from "@chakra-ui/system";
+import language from "../constant/language";
+import Slide from "react-reveal/Slide";
 
 const Home: React.FC<{}> = () => {
   const sectionStyle = useStyleConfig("Box", { variant: "section" });
@@ -22,7 +24,11 @@ const Home: React.FC<{}> = () => {
             <Fade top>
               <Div>
                 <HStack justifyContent={{ base: "center", md: "unset" }}>
-                  <Text fontSize="5xl" fontWeight="600" as="span">
+                  <Text
+                    fontSize={{ base: "4xl", md: "5xl" }}
+                    fontWeight="600"
+                    as="span"
+                  >
                     Hello
                   </Text>
                   <Img
@@ -33,14 +39,22 @@ const Home: React.FC<{}> = () => {
                     htmlWidth="72px"
                   />
                 </HStack>
-                <Text fontSize="5xl" fontWeight="600" as="h1">
+                <Text
+                  fontSize={{ base: "4xl", md: "5xl" }}
+                  fontWeight="600"
+                  as="h1"
+                >
                   I'm Naofal
                 </Text>
-                <Text fontSize="5xl" fontWeight="700" as="span">
+                <Text
+                  fontSize={{ base: "4xl", md: "5xl" }}
+                  fontWeight="700"
+                  as="span"
+                >
                   and I am a{" "}
                 </Text>
                 <Text
-                  fontSize="5xl"
+                  fontSize={{ base: "4xl", md: "5xl" }}
                   bgClip="text"
                   fontWeight="700"
                   bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
@@ -69,59 +83,101 @@ const Home: React.FC<{}> = () => {
         </Grid>
       </Div>
       <Div __css={sectionStyle} justifyContent="center" alignItems="center">
-        <Fade>
-          <VStack spacing="24px" textAlign="center">
+        <VStack spacing="24px" textAlign="center">
+          <Fade bottom cascade>
             <Text
-              fontSize="5xl"
+              fontSize={{ base: "4xl", md: "5xl" }}
               bgClip="text"
               fontWeight="700"
               bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
-              as="span"
+              as="h2"
             >
               About Me
             </Text>
-            <Text fontSize="xl" fontWeight="700">
+            <Text fontSize="xl" fontWeight="400">
               Greetings! My name is Naofal Leo Agusta, currently I live in
               Bandung, Indonesia. I am a passionate software engineer with 2
               years of experience in tech industry. I like alot of stuff such as
               music, sports, and gaming. On my free time I usually play Dota 2
               or binge some series on Netflix.
             </Text>
+          </Fade>
 
+          <Fade bottom cascade>
             <Text
-              fontSize="5xl"
+              fontSize={{ base: "4xl", md: "5xl" }}
               bgClip="text"
               fontWeight="700"
               bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
-              as="span"
+              as="h2"
             >
               Programming Language
             </Text>
 
-          </VStack>
-        </Fade>
-      </Div>
-      {/* <Div __css={sectionStyle} justifyContent="center" alignItems="center">
-          <Fade>
-            <VStack spacing="24px" textAlign="center">
-              <Text
-                fontSize="5xl"
-                bgClip="text"
-                fontWeight="700"
-                bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
-                as="span"
-              >
-                Programming Language
-              </Text>
-              <Text fontSize="xl" fontWeight="700">
-                Greetings! My name is Naofal Leo Agusta, currently I live in Bandung,
-                Indonesia. I am a passionate software engineer with 2 years of experience in tech industry.
-                I like alot of stuff such as music, sports, and gaming. On my free time I usually play Dota 2 
-                or binge some series on Netflix.
-              </Text>
-            </VStack>
+            <Text fontSize="xl" fontWeight="400">
+              I'm pretty comfortable developing an app using these programming
+              languanges:
+            </Text>
           </Fade>
-        </Div> */}
+          <Fade left cascade>
+            <Grid
+              templateColumns="repeat(12, 1fr)"
+              gap={2}
+              alignItems="center"
+              w="100%"
+            >
+              {language.map((item, idx) => {
+                return (
+                  <GridItem
+                    colSpan={{ base: 12, md: 4 }}
+                    display="flex"
+                    my={2}
+                    px={2}
+                    alignItems="center"
+                    justifyContent={{ base: "center", md: "left" }}
+                    key={`grid-${item.name}-${idx}`}
+                  >
+                    <Img
+                      src={item.img}
+                      alt={`logo ${item.name}`}
+                      w="72px"
+                      h="auto"
+                    />
+                    <VStack ml="1rem" alignItems="center">
+                      <Text fontSize="xl" fontWeight="900" as="p">
+                        {item.name}
+                      </Text>
+                      <HStack spacing="8px">
+                        {[1, 2, 3, 4, 5].map((number) => {
+                          if (number <= item.skill) {
+                            return (
+                              <Box
+                                w="20px"
+                                h="20px"
+                                bg="gray.700"
+                                key={`skill-${item.name}-${number}`}
+                              />
+                            );
+                          } else {
+                            return (
+                              <Box
+                                w="20px"
+                                h="20px"
+                                bg="gray.300"
+                                key={`skill-${item.name}-${number}`}
+                              />
+                            );
+                          }
+                        })}
+                      </HStack>
+                    </VStack>
+                  </GridItem>
+                );
+              })}
+            </Grid>
+          </Fade>
+        </VStack>
+      </Div>
     </Layout>
   );
 };

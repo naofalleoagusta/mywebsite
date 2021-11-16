@@ -26,20 +26,16 @@ const Box = {
       transition: "0.5s",
     },
     section: {
-      d: "flex",
-      justify: "center",
-      align: "center",
+      m: "auto",
       w: "100%",
       h: "100vh",
-      minH:"100vh"
     },
     sectionOne: {
-      d: "flex",
-      justify: "center",
-      align: "center",
       w: "100%",
-      h: "87vh",
-      minH:"87vh"
+      h: "93vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     },
     container: {
       d: "flex",
