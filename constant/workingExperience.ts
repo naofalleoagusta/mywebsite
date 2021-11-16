@@ -25,7 +25,7 @@ const workingExperience: Props[] = [
   },
   {
     name: "Ekrut",
-    duration: "May 2021 - Present 2021",
+    duration: "May 2021 - Present",
     role: "Software Engineer (Frontend)",
     logo: "https://ik.imagekit.io/tne8tyuws/1549427930289_S8gNouU92.jpg",
   },
