@@ -8,7 +8,9 @@ import React from "react";
 import { useStyleConfig } from "@chakra-ui/system";
 import language from "../constant/language";
 import tools from "../constant/tools";
+import workingExperience from "../constant/workingExperience";
 import SkillsList from "../components/SkillsList";
+import ExperienceList from "../components/Experience List";
 
 const Home: React.FC<{}> = () => {
   const sectionStyle = useStyleConfig("Box", { variant: "section" });
@@ -121,7 +123,6 @@ const Home: React.FC<{}> = () => {
             </Text>
           </Fade>
           <SkillsList skills={language} />
-
           <Text
             fontSize={{ base: "4xl", md: "5xl" }}
             bgClip="text"
@@ -131,12 +132,25 @@ const Home: React.FC<{}> = () => {
           >
             Tools and Technologies
           </Text>
-
           <Text fontSize="xl" fontWeight="400">
             For the last 2 years, I've been working with these tools and
             technologies :
           </Text>
           <SkillsList skills={tools} />
+          <Text
+            fontSize={{ base: "4xl", md: "5xl" }}
+            bgClip="text"
+            fontWeight="700"
+            bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
+            as="h2"
+          >
+            Working Experience
+          </Text>
+          <Text fontSize="xl" fontWeight="400">
+            For the last 2 years, I've been working or currently working for
+            these company:
+          </Text>
+          <ExperienceList experience={workingExperience} />
         </VStack>
       </Div>
     </Layout>

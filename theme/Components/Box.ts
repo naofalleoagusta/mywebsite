@@ -25,10 +25,13 @@ const Box = {
       },
       transition: "0.5s",
     },
+    card: {
+      border: "2px solid black",
+      borderRadius: "5px",
+    },
     section: {
       m: "auto",
       w: "100%",
-      h: "100vh",
     },
     sectionOne: {
       w: "100%",

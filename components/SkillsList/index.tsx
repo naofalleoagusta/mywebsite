@@ -3,6 +3,7 @@ import Fade from "react-reveal/Fade";
 import { HStack, Grid, GridItem, Box, VStack } from "@chakra-ui/layout";
 import { Img } from "@chakra-ui/react";
 import { Text } from "../../atoms";
+import { useStyleConfig } from "@chakra-ui/system";
 
 interface ToolsProps {
   name: string;
@@ -15,6 +16,7 @@ interface SkillProps {
 }
 
 const SkillsList: React.FC<SkillProps> = ({ skills }) => {
+  const cardStyle = useStyleConfig("Box", { variant: "card" });
   return (
     <Fade left cascade>
       <Grid
@@ -29,9 +31,10 @@ const SkillsList: React.FC<SkillProps> = ({ skills }) => {
               colSpan={{ base: 12, md: 4 }}
               display="flex"
               my={2}
-              px={2}
+              p={2}
               alignItems="center"
               justifyContent={{ base: "center", md: "left" }}
+              h="100%"
               key={`grid-${item.name}-${idx}`}
             >
               <Img src={item.img} alt={`logo ${item.name}`} w="72px" h="auto" />
