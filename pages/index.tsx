@@ -7,7 +7,8 @@ import { Tooltip } from "@chakra-ui/tooltip";
 import React from "react";
 import { useStyleConfig } from "@chakra-ui/system";
 import language from "../constant/language";
-import Slide from "react-reveal/Slide";
+import tools from "../constant/tools";
+import SkillsList from "../components/SkillsList";
 
 const Home: React.FC<{}> = () => {
   const sectionStyle = useStyleConfig("Box", { variant: "section" });
@@ -119,63 +120,23 @@ const Home: React.FC<{}> = () => {
               languanges:
             </Text>
           </Fade>
-          <Fade left cascade>
-            <Grid
-              templateColumns="repeat(12, 1fr)"
-              gap={2}
-              alignItems="center"
-              w="100%"
-            >
-              {language.map((item, idx) => {
-                return (
-                  <GridItem
-                    colSpan={{ base: 12, md: 4 }}
-                    display="flex"
-                    my={2}
-                    px={2}
-                    alignItems="center"
-                    justifyContent={{ base: "center", md: "left" }}
-                    key={`grid-${item.name}-${idx}`}
-                  >
-                    <Img
-                      src={item.img}
-                      alt={`logo ${item.name}`}
-                      w="72px"
-                      h="auto"
-                    />
-                    <VStack ml="1rem" alignItems="center">
-                      <Text fontSize="xl" fontWeight="900" as="p">
-                        {item.name}
-                      </Text>
-                      <HStack spacing="8px">
-                        {[1, 2, 3, 4, 5].map((number) => {
-                          if (number <= item.skill) {
-                            return (
-                              <Box
-                                w="20px"
-                                h="20px"
-                                bg="gray.700"
-                                key={`skill-${item.name}-${number}`}
-                              />
-                            );
-                          } else {
-                            return (
-                              <Box
-                                w="20px"
-                                h="20px"
-                                bg="gray.300"
-                                key={`skill-${item.name}-${number}`}
-                              />
-                            );
-                          }
-                        })}
-                      </HStack>
-                    </VStack>
-                  </GridItem>
-                );
-              })}
-            </Grid>
-          </Fade>
+          <SkillsList skills={language} />
+
+          <Text
+            fontSize={{ base: "4xl", md: "5xl" }}
+            bgClip="text"
+            fontWeight="700"
+            bgGradient="linear-gradient(90deg, rgba(244,94,94,1) 0%, rgba(205,0,104,1) 29%, rgba(0,212,255,1) 100%)"
+            as="h2"
+          >
+            Tools and Technologies
+          </Text>
+
+          <Text fontSize="xl" fontWeight="400">
+            For the last 2 years, I've been working with these tools and
+            technologies :
+          </Text>
+          <SkillsList skills={tools} />
         </VStack>
       </Div>
     </Layout>
