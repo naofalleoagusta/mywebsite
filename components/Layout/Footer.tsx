@@ -5,7 +5,7 @@ import { Text } from "../../atoms";
 
 const Footer: React.FC<{}> = () => {
   return (
-    <Container maxW="container.xl" position="sticky">
+    <Container maxW="container.xl" position="sticky" pt={10} pb={5}>
       <Text fontSize="md" fontWeight={400}>
         Made with ❤️ on{" "}
         <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> and{" "}

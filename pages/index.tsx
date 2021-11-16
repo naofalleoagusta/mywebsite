@@ -11,6 +11,7 @@ import tools from "../constant/tools";
 import workingExperience from "../constant/workingExperience";
 import SkillsList from "../components/SkillsList";
 import ExperienceList from "../components/Experience List";
+import SEO from "../components/SEO";
 
 const Home: React.FC<{}> = () => {
   const sectionStyle = useStyleConfig("Box", { variant: "section" });
@@ -18,6 +19,16 @@ const Home: React.FC<{}> = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Naofal | Software Engineer"
+        description="Greetings! My name is Naofal Leo Agusta, currently I live in
+        Bandung, Indonesia. I am a passionate software engineer with 2
+        years of experience in tech industry."
+        type="website"
+        image="https://ik.imagekit.io/tne8tyuws/DSC_3116_UsOtpoegW.jpg?updatedAt=1636940731327"
+        twitterCard="summary_large_image"
+        keywords="naofal leo agusta, naofalleoagusta, naofal software engineer"
+      />
       <Div __css={sectionOneStyle}>
         <Grid templateColumns="repeat(12, 1fr)" gap={2} alignItems="center">
           <GridItem
